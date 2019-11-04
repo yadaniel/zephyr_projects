@@ -47,9 +47,9 @@
    ninja --version --> 1.9.0  
   
 12) download msys2  
-    needed for gperf  
+    pacman -Sy gperf  
     cp msys-2.0.dll into system32  
-    set PATH  
+    set PATH  --> C:\msys64\usr\bin  
   
 12) download, compile and install dtc  
     in msys2
@@ -57,7 +57,7 @@
     git checkout 1.5.1
     make  
     note that msys2 may require packages  
-    pacman -S diffutils gcc make gperf  
+    pacman -S bison flex diffutils gcc make gperf  
     pacman -Qe  
   
 13) west build -b nucleo_l432kc samples/hello_world  
