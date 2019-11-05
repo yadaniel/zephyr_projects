@@ -99,4 +99,47 @@ Memory region         Used Size  Region Size  %age Used
         IDT_LIST:         120 B         2 KB      5.86%  
 [120/120] Linking C executable zephyr\zephyr.elf  
   
+# installation notes add on
+on the second pc (windows10) the toolchain  
+gcc-arm-none-eabi-7-2018-q2-update-win32-sha1  
+has been replaced with  
+gcc-arm-none-eabi-8-2019-q3-update-win32-sha1  
+because of .unknown link errors  
+  
+assert(toolchain_is_ok "The toolchain is unable to build a dummy C file. See CMakeError.log.")  
+toolchain_is_ok  failed  
+when commented out  the build process failed later at linking the modules  
+after toolchain replacement build succedded  
+  
+C:\Users\yadaniel\01_embedded\01_zephyr\zephyr>west build -b nucleo_l432kc samples/hello_world  
+-- west build: build configuration:  
+       source directory: C:\Users\yadaniel\01_embedded\01_zephyr\zephyr\samples\hello_world  
+       build directory: C:\Users\yadaniel\01_embedded\01_zephyr\zephyr\build  
+       BOARD: nucleo_l432kc (origin: command line)  
+-- west build: generating a build system  
+Zephyr version: 2.0.99  
+-- Found PythonInterp: C:/Python38/python.exe (found suitable version "3.8.0", minimum required is "3.4")  
+-- Selected BOARD nucleo_l432kc  
+-- Found west: C:/Python38/Scripts/west.exe (found suitable version "0.6.3", minimum required is "0.6.0")  
+-- Loading C:/Users/yadaniel/01_embedded/01_zephyr/zephyr/boards/arm/nucleo_l432kc/nucleo_l432kc.dts as base  
+Devicetree configuration written to C:/Users/yadaniel/01_embedded/01_zephyr/zephyr/build/zephyr/include/generated/generated_dts_board.conf  
+Parsing Kconfig tree in C:/Users/yadaniel/01_embedded/01_zephyr/zephyr/Kconfig  
+Loaded configuration 'C:/Users/yadaniel/01_embedded/01_zephyr/zephyr/build/zephyr/.config'  
+No change to 'C:/Users/yadaniel/01_embedded/01_zephyr/zephyr/build/zephyr/.config'  
+-- The C compiler identification is GNU 8.3.1  
+-- The CXX compiler identification is GNU 8.3.1  
+-- The ASM compiler identification is GNU  
+-- Found assembler: C:/GNU_Tools_Arm_Embedded/8_2019/bin/arm-none-eabi-gcc.exe  
+-- Cache files will be written to: C:\Users\yadaniel\AppData\Local/.cache/zephyr  
+-- Configuring done  
+-- Generating done  
+-- Build files have been written to: C:/Users/yadaniel/01_embedded/01_zephyr/zephyr/build  
+-- west build: building application  
+[115/120] Linking C executable zephyr\zephyr_prebuilt.elf  
+Memory region         Used Size  Region Size  %age Used  
+           FLASH:       12880 B       256 KB      4.91%  
+            SRAM:        4152 B        64 KB      6.34%  
+        IDT_LIST:         120 B         2 KB      5.86%  
+[120/120] Linking C executable zephyr\zephyr.elf  
+  
 
