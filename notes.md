@@ -57,7 +57,7 @@
     git checkout 1.5.1
     make  
     note that msys2 may require packages  
-    pacman -S bison flex diffutils gcc make gperf  
+    pacman -S bison flex diffutils gcc make gperf pkg-config  
     pacman -Qe  
   
 13) west build -b nucleo_l432kc samples/hello_world  
